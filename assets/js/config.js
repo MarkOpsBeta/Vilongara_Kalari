@@ -3,5 +3,5 @@
 window.VK_CONFIG = {
   SUPABASE_URL: '',        // e.g. 'https://abcdefgh.supabase.co'
   SUPABASE_ANON_KEY: '',   // Project Settings -> API -> anon public key
-  WHATSAPP_NUMBER: '91XXXXXXXXXX', // used if Supabase is not set up: the form opens WhatsApp instead
+  WHATSAPP_NUMBER: '916282126602', // used if Supabase is not set up: the form opens WhatsApp instead
 };

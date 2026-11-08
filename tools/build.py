@@ -1,22 +1,25 @@
-"""Builds the static Vailongara Kalari website into ./site (shared header/footer, home + legal pages)."""
+"""Builds the static Vylongara Kalari website into ./site (shared header/footer, home + legal pages)."""
 import os, datetime
 
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root
 
 # ---- business details (placeholders are listed in README "Before you publish") ----
 C = dict(
-    name="Vailongara Kalari",
+    name="Vylongara Kalari",
     domain="vailongarakalari.in",
-    proprietor="[Proprietor name]",
-    address="Vailongara Kalari, near Chumanna Mannu, Thrissur, Kerala – 680XXX",
-    phone="+91 XXXXX XXXXX",
-    email="info@vailongarakalari.in",
-    wa="91XXXXXXXXXX",          # WhatsApp booking number, country code, no +
-    udyam="UDYAM-KL-XX-XXXXXXX",
+    address="Vylongara Kalari, near Chumanna Mannu, Thrissur, Kerala – 680XXX",
+    phones=["+91 77363 34581", "+91 80896 14581"],
+    email="vailongarakalari2025@gmail.com",
+    wa="916282126602",          # WhatsApp booking number, country code, no +
+    office="9 AM – 5 PM",
+    instagram="https://www.instagram.com/vailongara_kalari?obrf=MXBwdWF6NXVwMXA2dg==",
+    facebook="https://www.facebook.com/share/1HTxwyCHn2/",
     updated="7 November 2026",
-    map_q="Vailongara Kalari, Chumanna Mannu, Thrissur, Kerala",
+    map_q="Vailongara Kalari, Chumanna Mannu, Thrissur, Kerala",  # spelling as listed on Google Maps
 )
 WA = f"https://wa.me/{C['wa']}?text=Namaskaram"
+TEL = lambda n: "tel:" + n.replace(" ", "")
+WA_SHOW = "+" + C["wa"][:2] + " " + C["wa"][2:7] + " " + C["wa"][7:]
 YEAR = datetime.date.today().year
 
 I = {  # inline icons (stroke = currentColor)
@@ -29,6 +32,8 @@ I = {  # inline icons (stroke = currentColor)
  "mail": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
  "clock": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
  "lotus": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20c-4 0-8-2-9-6 3 0 6 1 9 4 3-3 6-4 9-4-1 4-5 6-9 6Z"/><path d="M12 18c-2-2-3-5-3-8 1.5 1 2.5 2 3 3.5.5-1.5 1.5-2.5 3-3.5 0 3-1 6-3 8Z"/><path d="M12 13.5C11 11 11 7 12 4c1 3 1 7 0 9.5Z"/></svg>',
+ "insta": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+ "fb": '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4a21 21 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/></svg>',
  "menu": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
 }
 
@@ -89,14 +94,15 @@ def footer():
         <div class="footer-brand"><img src="/assets/img/logo.png" alt=""><strong>{C['name']}</strong></div>
         <p class="ml" style="color:#E3BE72">6 തലമുറകളായി 300+ വർഷങ്ങളുടെ പാരമ്പര്യം</p>
         <p>{C['address']}</p>
-        <p>Udyam Registration: {C['udyam']}</p>
+        {social()}
       </div>
       <div>
         <h4>Visit &amp; contact</h4>
         <ul>
-          <li><a href="tel:{C['phone'].replace(' ', '')}">{C['phone']}</a></li>
+          <li><a href="{WA}" target="_blank" rel="noopener">WhatsApp: {WA_SHOW}</a></li>
+          {"".join(f'<li><a href="{TEL(n)}">{n}</a></li>' for n in C["phones"])}
           <li><a href="mailto:{C['email']}">{C['email']}</a></li>
-          <li><a href="{WA}" target="_blank" rel="noopener">WhatsApp booking</a></li>
+          <li>Office: {C['office']}</li>
           <li><a href="/contact.html">Contact us</a></li>
         </ul>
       </div>
@@ -122,6 +128,14 @@ def footer():
 </body>
 </html>
 """
+
+def social(cls="social"):
+    return (f'<div class="{cls}">'
+            f'<a href="{C["instagram"]}" target="_blank" rel="noopener" aria-label="Instagram">{I["insta"]}</a>'
+            f'<a href="{C["facebook"]}" target="_blank" rel="noopener" aria-label="Facebook">{I["fb"]}</a></div>')
+
+def phone_items(style=""):
+    return "".join(f'<li>{I["phone"]}<a{style} href="{TEL(n)}">{n}</a></li>' for n in C["phones"])
 
 def divider():
     return f'<div class="divider">{I["lamp"]}</div>'
@@ -149,7 +163,7 @@ gallery = "\n".join(
     for c, n, cap in gallery_items)
 
 faqs = [
-    ("What is Mashinottam?", "Mashinottam is a traditional Kerala practice of seeking guidance through observation of mashi (sacred ink). At Vailongara Kalari it has been practised by the same family for six generations."),
+    ("What is Mashinottam?", "Mashinottam is a traditional Kerala practice of seeking guidance through observation of mashi (sacred ink). At Vylongara Kalari it has been practised by the same family for six generations."),
     ("Do I need to book before visiting?", "Yes. Please book on WhatsApp at least 2 days ahead. On your booked date you may come any time between 10 AM and 4 PM; devotees are seen in order of arrival."),
     ("How much does a consultation cost?", "There is no fixed fee for a direct consultation. A ₹101 booking token confirms your visit, and you may offer any dakshina you wish on the day. Online phone consultations are ₹1,001."),
     ("Can I consult from abroad or another city?", "Yes. Choose an online consultation on WhatsApp. The Acharya calls you on a normal phone call between 7 PM and 10 PM in the time slot you book."),
@@ -159,7 +173,7 @@ faqs = [
 faq = "\n".join(f"      <details><summary>{q}</summary><p>{a}</p></details>" for q, a in faqs)
 
 home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
-            "Vailongara Kalari near Chumanna Mannu, Thrissur: six generations and 300+ years of Mashinottam and Jyothisham tradition. Book consultations and poojas on WhatsApp.") + header() + f"""
+            "Vylongara Kalari near Chumanna Mannu, Thrissur: six generations and 300+ years of Mashinottam and Jyothisham tradition. Book consultations and poojas on WhatsApp.") + header() + f"""
 <main id="main">
   <!-- HERO: replace /assets/img/kshetram/hero.jpg with a large photo of the Kshetram (2000×1200 or larger) -->
   <section class="hero" style="padding:0">
@@ -168,7 +182,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
     <div class="container hero-content">
       <span class="eyebrow">Near Chumanna Mannu · Thrissur · Kerala</span>
       <h1 class="hero-ml">6 തലമുറകളായി 300+ വർഷങ്ങളുടെ പാരമ്പര്യം.<br>മഷി നോട്ടത്തിലൂടെ പ്രശ്നങ്ങൾ പരിഹരിക്കുന്നു.</h1>
-      <p class="hero-en">Six generations and more than three centuries of Mashinottam and Jyothisham, carried forward with devotion at Vailongara Kalari.</p>
+      <p class="hero-en">Six generations and more than three centuries of Mashinottam and Jyothisham, carried forward with devotion at Vylongara Kalari.</p>
       <div class="hero-actions">
         <a class="btn btn-gold" href="{WA}" target="_blank" rel="noopener">{I['wa']} Book a consultation</a>
         <a class="btn btn-ghost" href="#heritage">Our heritage</a>
@@ -193,7 +207,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           <span class="eyebrow">Our heritage</span>
           <h2>A living tradition, passed from Acharya to Acharya</h2>
           <!-- EDIT: replace with the Kalari's own history when received -->
-          <p>For more than three hundred years, the family at Vailongara Kalari has preserved the knowledge of Mashinottam and Jyothisham, handing it down through six generations of Acharyas.</p>
+          <p>For more than three hundred years, the family at Vylongara Kalari has preserved the knowledge of Mashinottam and Jyothisham, handing it down through six generations of Acharyas.</p>
           <p>What began as a family practice beside the Kshetram near Chumanna Mannu has become a place where devotees from across Kerala and beyond come for guidance, prayer and peace of mind.</p>
           <p class="quote">“Every generation receives the tradition as it was given, and keeps it as it was kept.”</p>
         </div>
@@ -219,7 +233,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
       </div>
       <div class="reveal">
         <span class="eyebrow" style="color:var(--gold-soft)">The present Acharya</span>
-        <h2><!-- EDIT: name -->Acharya of Vailongara Kalari</h2>
+        <h2><!-- EDIT: name -->Acharya of Vylongara Kalari</h2>
         <p class="role">Sixth generation · Mashinottam &amp; Jyothisham</p>
         <!-- EDIT: replace with the Acharya's own introduction -->
         <p class="lead">The present Acharya carries forward the family's practice as the sixth generation, guiding devotees through Mashinottam and Jyothisham every day at the Kalari.</p>
@@ -347,7 +361,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           </table>
           <ul class="contact-list" style="color:var(--ink)">
             <li>{I['pin']}<span>{C['address']}</span></li>
-            <li>{I['phone']}<a href="tel:{C['phone'].replace(' ', '')}">{C['phone']}</a></li>
+            {phone_items()}
           </ul>
         </div>
         <div class="map reveal">
@@ -379,11 +393,12 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
         <h2>We are here to help</h2>
         <p class="lead">For bookings, WhatsApp is the quickest. For anything else, send us a message and our office will reply.</p>
         <ul class="contact-list">
-          <li>{I['wa']}<a style="color:#fff" href="{WA}" target="_blank" rel="noopener">WhatsApp: +{C['wa']}</a></li>
-          <li>{I['phone']}<a style="color:#fff" href="tel:{C['phone'].replace(' ', '')}">{C['phone']}</a></li>
+          <li>{I['wa']}<a style="color:#fff" href="{WA}" target="_blank" rel="noopener">WhatsApp: {WA_SHOW}</a></li>
+          {phone_items(' style="color:#fff"')}
           <li>{I['mail']}<a style="color:#fff" href="mailto:{C['email']}">{C['email']}</a></li>
-          <li>{I['clock']}<span>Office: 9 AM – 9 PM</span></li>
+          <li>{I['clock']}<span>Office: {C['office']}</span></li>
         </ul>
+        {social("social social-lg")}
       </div>
       <form class="form" id="enquiry" novalidate style="position:relative">
         <h3>Send an enquiry</h3>
@@ -421,7 +436,7 @@ def legal_page(fname, title, subtitle, body, desc):
 """ + footer()
     open(os.path.join(OUT, fname), "w").write(html)
 
-who = f"""<div class="box"><strong>{C['name']}</strong> (proprietor: {C['proprietor']})<br>{C['address']}<br>Email: <a href="mailto:{C['email']}">{C['email']}</a> · Phone: {C['phone']} · Udyam: {C['udyam']}</div>"""
+who = f"""<div class="box"><strong>{C['name']}</strong><br>{C['address']}<br>Phone: {" / ".join(C['phones'])} · WhatsApp: {WA_SHOW}<br>Email: <a href="mailto:{C['email']}">{C['email']}</a></div>"""
 
 privacy = f"""    <p><em>Last updated: {C['updated']}</em></p>
     <p>This Privacy Policy explains how {C['name']} (“we”, “us”) collects, uses and protects personal information when you visit this website, contact us, or book a consultation or pooja through WhatsApp.</p>
@@ -470,7 +485,7 @@ privacy = f"""    <p><em>Last updated: {C['updated']}</em></p>
     <h2>9. Website</h2>
     <p>This website does not use advertising or tracking cookies. Embedded Google Maps and Google Fonts may set their own cookies under Google's policies.</p>
     <h2>10. Changes and contact</h2>
-    <p>We may update this policy; the date above shows the latest version. Questions or complaints (grievance contact): {C['proprietor']}, <a href="mailto:{C['email']}">{C['email']}</a>, {C['phone']}.</p>"""
+    <p>We may update this policy; the date above shows the latest version. Questions or complaints (grievance contact): <a href="mailto:{C['email']}">{C['email']}</a>, {" / ".join(C['phones'])}.</p>"""
 
 terms = f"""    <p><em>Last updated: {C['updated']}</em></p>
     <p>These Terms apply to bookings and services of {C['name']}, whether made on WhatsApp, by phone, through this website or in person. By booking, you agree to them.</p>
@@ -507,7 +522,7 @@ terms = f"""    <p><em>Last updated: {C['updated']}</em></p>
     <h2>8. Governing law</h2>
     <p>These Terms are governed by the laws of India. Courts at Thrissur, Kerala have jurisdiction.</p>
     <h2>9. Contact</h2>
-    <p><a href="mailto:{C['email']}">{C['email']}</a> · {C['phone']}</p>"""
+    <p><a href="mailto:{C['email']}">{C['email']}</a> · {" / ".join(C['phones'])}</p>"""
 
 refund = f"""    <p><em>Last updated: {C['updated']}</em></p>
     {who}
@@ -553,13 +568,16 @@ delivery = f"""    <p><em>Last updated: {C['updated']}</em></p>
 
 contact = f"""    {who}
     <h2>Book or ask a question</h2>
-    <p>The quickest way is WhatsApp. Our booking assistant is available day and night; our office replies between 9 AM and 9 PM.</p>
+    <p>The quickest way is WhatsApp. Our booking assistant is available day and night; our office replies between {C['office']}.</p>
     <p><a class="btn btn-maroon" href="{WA}" target="_blank" rel="noopener">{I['wa']} Message us on WhatsApp</a></p>
     <h2>Visit</h2>
     <p>{C['address']}</p>
     <p>Consultations: every day, 10 AM – 4 PM (please book at least 2 days ahead).<br>Temple nada: 5:00 – 9:30 AM and 5:30 – 8:00 PM.</p>
     <h2>Phone and email</h2>
-    <p>Phone: <a href="tel:{C['phone'].replace(' ', '')}">{C['phone']}</a><br>Email: <a href="mailto:{C['email']}">{C['email']}</a></p>
+    <p>{"<br>".join(f'Phone: <a href="{TEL(n)}">{n}</a>' for n in C["phones"])}<br>WhatsApp: <a href="{WA}" target="_blank" rel="noopener">{WA_SHOW}</a><br>Email: <a href="mailto:{C['email']}">{C['email']}</a></p>
+    <p>Office: {C['office']}</p>
+    <h2>Follow us</h2>
+    {social("social social-dark")}
     <p><a href="/#contact">Send an enquiry from our home page</a></p>"""
 
 notfound = head(f"Page not found | {C['name']}", "Page not found") + header(home=False) + f"""

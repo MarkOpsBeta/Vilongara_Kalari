@@ -287,3 +287,12 @@ section { padding: 100px 0; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .pooja-feature { min-height: 380px; }
 }
+
+/* ---------- social icons ---------- */
+.social { display: flex; gap: 12px; margin-top: 18px; }
+.social a { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(227, 190, 114, .4); color: var(--gold-soft); transition: background .2s ease, color .2s ease, transform .2s ease; }
+.social a:hover { background: var(--gold-soft); color: var(--maroon-deep); transform: translateY(-2px); }
+.social svg { width: 20px; height: 20px; }
+.social-lg a { width: 48px; height: 48px; }
+.social-dark a { border-color: var(--line); color: var(--maroon); }
+.social-dark a:hover { background: var(--maroon); color: #fff; }

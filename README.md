@@ -1,4 +1,4 @@
-# Vailongara Kalari — website
+# Vylongara Kalari — website
 
 Static website for **vailongarakalari.in**: home page with large Kshetram photos, the six-generation lineage and the present Acharya, plus the policy pages that Meta, Razorpay and Google ask for.
 
@@ -27,16 +27,9 @@ tools/build.py                 Optional generator (see "Editing")
 
 ## 1. Before you publish — replace the placeholders
 
-Search all files for these and replace them (GitHub: open file → pencil icon; or VS Code: Ctrl+Shift+H):
+Already filled in: name (Vylongara Kalari), WhatsApp +91 62821 26602, phones +91 77363 34581 / +91 80896 14581, email vailongarakalari2025@gmail.com, office hours 9 AM – 5 PM, Instagram and Facebook links. To change any of them later, edit the `C = dict(...)` block in `tools/build.py` and run it (see "Editing").
 
-| Find | Replace with |
-| --- | --- |
-| `91XXXXXXXXXX` | The Kalari's WhatsApp booking number, e.g. `919876543210` (also in `assets/js/config.js`) |
-| `+91 XXXXX XXXXX` | Phone number shown on the site |
-| `680XXX` | PIN code (address must match the Udyam certificate exactly) |
-| `[Proprietor name]` | Name on the Udyam registration |
-| `UDYAM-KL-XX-XXXXXXX` | Udyam registration number |
-| `info@vailongarakalari.in` | Keep, once the email is set up (step 5) |
+Still to fill: the **PIN code** — search for `680XXX` and replace it with the real PIN (the address should match the Udyam certificate).
 
 In `index.html`, lines marked `<!-- EDIT -->` are where the Kalari's own words go: history, the Acharyas' names, the present Acharya's introduction.
 
@@ -88,9 +81,9 @@ GoDaddy → **My Products → vailongarakalari.in → DNS** (Manage DNS):
 
 ✅ `https://vailongarakalari.in` opens the site with a padlock.
 
-## 5. Email on the domain (needed for Meta verification)
+## 5. Email on the domain (optional, helps Meta verification)
 
-Create `info@vailongarakalari.in` with **Zoho Mail** (free plan) or GoDaddy email, or forward it to the Kalari Gmail with **ImprovMX** (free). Each gives you MX/TXT records to add in GoDaddy DNS — add them *without* touching the GitHub records above.
+The site currently shows the Kalari Gmail. If Meta asks for a domain email, create `info@vailongarakalari.in` with **Zoho Mail** (free plan) or GoDaddy email, or forward it to the Kalari Gmail with **ImprovMX** (free). Each gives you MX/TXT records to add in GoDaddy DNS — add them *without* touching the GitHub records above.
 
 ## 6. Supabase enquiry form (optional)
 
