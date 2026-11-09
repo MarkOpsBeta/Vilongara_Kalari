@@ -27,9 +27,9 @@ tools/build.py                 Optional generator (see "Editing")
 
 ## 1. Before you publish — replace the placeholders
 
-Already filled in: name (Vylongara Kalari), WhatsApp +91 62821 26602, phones +91 77363 34581 / +91 80896 14581, email vailongarakalari2025@gmail.com, office hours 9 AM – 5 PM, Instagram and Facebook links. To change any of them later, edit the `C = dict(...)` block in `tools/build.py` and run it (see "Editing").
+Already filled in: name (Vylongara Kalari), address with PIN 680652, WhatsApp +91 62821 26602, phones +91 77363 34581 / +91 80896 14581, email vailongarakalari2025@gmail.com, office hours 9 AM – 5 PM, Instagram and Facebook links. To change any of them later, edit the `C = dict(...)` block in `tools/build.py` and run it (see "Editing").
 
-Still to fill: the **PIN code** — search for `680XXX` and replace it with the real PIN (the address should match the Udyam certificate).
+Address: near Chumanna Mannu, Thrissur, Kerala – 680652.
 
 In `index.html`, lines marked `<!-- EDIT -->` are where the Kalari's own words go: history, the Acharyas' names, the present Acharya's introduction.
 

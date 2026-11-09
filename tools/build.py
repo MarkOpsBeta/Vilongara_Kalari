@@ -7,7 +7,7 @@ OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 C = dict(
     name="Vylongara Kalari",
     domain="vailongarakalari.in",
-    address="Vylongara Kalari, near Chumanna Mannu, Thrissur, Kerala – 680XXX",
+    address="Vylongara Kalari, near Chumanna Mannu, Thrissur, Kerala – 680652",
     phones=["+91 77363 34581", "+91 80896 14581"],
     email="vailongarakalari2025@gmail.com",
     wa="916282126602",          # WhatsApp booking number, country code, no +
@@ -154,7 +154,7 @@ gens = [
     ("Second generation", "Rama Panicker", "രാമ പണിക്കർ"),
     ("Third generation", "Damodhara Panicker", "ദാമോദര പണിക്കർ"),
     ("Fourth generation", "Sree Kumar Panicker", "ശ്രീകുമാർ പണിക്കർ"),
-    ("Fifth generation · Present Acharya", "Sachana Kanakulath Kalarkkal Sreekumar", "സചന കണകുളത്ത് കളരിക്കൽ ശ്രീകുമാർ"),
+    ("Fifth generation · Present Acharya", "Sajana Kanakulath Kalarikkal Sreekumar", "സജന കാണകുളത്ത് കളരിക്കൽ ശ്രീകുമാർ"),
 ]
 lineage = "\n".join(
     f"""      <div class="gen{' current' if i == 5 else ''} reveal">
@@ -216,7 +216,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           <span class="eyebrow">Our heritage</span>
           <h2>A living tradition, passed from Acharya to Acharya</h2>
           <!-- EDIT: replace with the Kalari's own history when received -->
-          <p>For more than three hundred years, the family at Vylongara Kalari has preserved the knowledge of Mashinottam and Jyothisham, handing it down from Acharya to Acharya within one family. Today the Kalari is led by Sachana Kanakulath Kalarkkal Sreekumar, the fifth-generation Acharya.</p>
+          <p>For more than three hundred years, the family at Vylongara Kalari has preserved the knowledge of Mashinottam and Jyothisham, handing it down from Acharya to Acharya within one family. Today the Kalari is led by Sajana Kanakulath Kalarikkal Sreekumar, the fifth-generation Acharya.</p>
           <p>What began as a family practice beside the Kshetram near Chumanna Mannu has become a place where devotees from across Kerala and beyond come for guidance, prayer and peace of mind.</p>
           <p class="quote">“Every generation receives the tradition as it was given, and keeps it as it was kept.”</p>
         </div>
@@ -238,12 +238,12 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
     <div class="container acharya">
       <div class="acharya-frame reveal">
         <!-- Replace /assets/img/acharya-main.jpg with a portrait of the present Acharya (1000×1300, portrait) -->
-        <div class="arch"><img src="/assets/img/acharya-main.jpg" alt="Sachana Kanakulath Kalarkkal Sreekumar, present Acharya of {C['name']}" loading="lazy"></div>
+        <div class="arch"><img src="/assets/img/acharya-main.jpg" alt="Sajana Kanakulath Kalarikkal Sreekumar, present Acharya of {C['name']}" loading="lazy"></div>
       </div>
       <div class="reveal">
         <span class="eyebrow" style="color:var(--gold-soft)">The present Acharya</span>
-        <h2>Sachana Kanakulath Kalarkkal Sreekumar</h2>
-        <p class="ml acharya-ml">സചന കണകുളത്ത് കളരിക്കൽ ശ്രീകുമാർ</p>
+        <h2>Sajana Kanakulath Kalarikkal Sreekumar</h2>
+        <p class="ml acharya-ml">സജന കാണകുളത്ത് കളരിക്കൽ ശ്രീകുമാർ</p>
         <p class="role">Fifth generation · Mashinottam &amp; Jyothisham</p>
         <p class="lead">The present Acharya of Vylongara Kalari received diksha in the family's tradition, the knowledge handed down from Acharya to Acharya through the generations before her.</p>
         <p>For many years she has guided devotees through Mashinottam and Jyothisham at the Kalari, keeping the practice as it was given to her.</p>

@@ -80,7 +80,8 @@ p { margin: 0 0 1em; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30, 6, 6, .25) 0%, rgba(30, 6, 6, .35) 40%, rgba(30, 6, 6, .88) 100%); }
 .hero-content { position: relative; z-index: 2; padding: 120px 0 90px; }
-.hero .eyebrow { color: var(--gold-soft); }
+.hero .eyebrow { color: var(--maroon-deep); background: linear-gradient(135deg, var(--gold-soft), var(--gold)); padding: 8px 18px; border-radius: 999px; font-weight: 600; letter-spacing: .18em; line-height: 1.5; box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .6); }
+.hero .eyebrow::before, .hero .eyebrow::after { display: none; }
 .hero-ml { font-family: var(--ml); font-weight: 700; font-size: clamp(1.7rem, 4.2vw, 3.2rem); line-height: 1.45; margin: 0 0 14px; color: #fff; max-width: 900px; }
 .hero-en { font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.7rem); color: var(--gold-pale); margin-bottom: 30px; max-width: 760px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -391,3 +392,4 @@ section { padding: 100px 0; }
   .deity { padding: 22px 10px; }
   .deity .ml { font-size: 1.1rem; }
 }
+@media (max-width: 600px) { .hero .eyebrow { font-size: .66rem; letter-spacing: .1em; padding: 7px 14px; } }
