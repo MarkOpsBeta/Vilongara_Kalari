@@ -1,7 +1,7 @@
 """Builds the static Vylongara Kalari website into ./site (shared header/footer, home + legal pages)."""
 import os, datetime
 
-OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root
+OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---- business details (placeholders are listed in README "Before you publish") ----
 C = dict(
@@ -154,15 +154,19 @@ gens = [
     ("Second generation", "Acharya"),
     ("Third generation", "Acharya"),
     ("Fourth generation", "Acharya"),
-    ("Fifth generation", "Acharya"),
-    ("Sixth generation", "Present Acharya"),
+    ("Fifth generation", "Present Acharya"),
 ]
 lineage = "\n".join(
-    f"""      <div class="gen{' current' if i == 6 else ''} reveal">
-        <div class="arch"><img src="/assets/img/lineage/generation-{i}.jpg" alt="{t} Acharya of {C['name']}" loading="lazy"></div>
+    f"""      <div class="gen{' current' if i == 5 else ''} reveal">
+        <div class="arch"><img src="/assets/img/lineage/generation-{i}.jpg" alt="{t} of {C['name']}, {g.lower()}" loading="lazy"></div>
         <span class="num">{g}</span>
         <h4><!-- EDIT: Acharya's name -->{t}</h4>
-      </div>""" for i, (g, t) in enumerate(gens, start=1))
+      </div>""" for i, (g, t) in enumerate(gens, start=1)) + f"""
+      <div class="gen next reveal">
+        <div class="arch"><div class="emblem" role="img" aria-label="A lit lamp for the next generation">{I['lamp']}</div></div>
+        <span class="num">Sixth generation</span>
+        <h4>Learning the tradition</h4>
+      </div>"""
 
 gallery_items = [("g1", 1, "The Kshetram"), ("g2", 2, "Sreekovil"), ("g3", 3, "Evening deeparadhana"),
                  ("g4", 4, "Kalari"), ("g5", 5, "Amavasi Kalasha Pooja"), ("g6", 6, "Kshetram grounds")]
@@ -171,7 +175,7 @@ gallery = "\n".join(
     for c, n, cap in gallery_items)
 
 faqs = [
-    ("What is Mashinottam?", "Mashinottam is a traditional Kerala practice of seeking guidance through observation of mashi (sacred ink). At Vylongara Kalari it has been practised by the same family for six generations."),
+    ("What is Mashinottam?", "Mashinottam is a traditional Kerala practice of seeking guidance through observation of mashi (sacred ink). At Vylongara Kalari it has been practised by the same family for six generations. The present Acharya is of the fifth generation, and the sixth is learning the tradition under her guidance."),
     ("What are the temple timings?", "The nada opens 5:00 – 9:30 AM and 5:00 – 8:30 PM. Deeparadhana is at 6:45 PM. See the Nithya Pooja page for the full daily schedule."),
     ("Do I need to book before visiting?", "Yes. Please book on WhatsApp at least 2 days ahead. On your booked date you may come any time between 10 AM and 4 PM; devotees are seen in order of arrival."),
     ("How much does a consultation cost?", "There is no fixed fee for a direct consultation. A ₹101 booking token confirms your visit, and you may offer any dakshina you wish on the day. Online phone consultations are ₹1,001."),
@@ -201,7 +205,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
 
   <div class="stats">
     <div class="container">
-      <div class="stat"><strong>6</strong><span>Generations of Acharyas</span></div>
+      <div class="stat"><strong>6</strong><span>Generations of tradition</span></div>
       <div class="stat"><strong>300+</strong><span>Years of tradition</span></div>
       <div class="stat"><strong>Daily</strong><span>Consultations, no holidays</span></div>
       <div class="stat"><strong>Online</strong><span>Phone consultations, 7–10 PM</span></div>
@@ -216,7 +220,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           <span class="eyebrow">Our heritage</span>
           <h2>A living tradition, passed from Acharya to Acharya</h2>
           <!-- EDIT: replace with the Kalari's own history when received -->
-          <p>For more than three hundred years, the family at Vylongara Kalari has preserved the knowledge of Mashinottam and Jyothisham, handing it down through six generations of Acharyas.</p>
+          <p>For more than three hundred years, the family at Vylongara Kalari has preserved the knowledge of Mashinottam and Jyothisham, handing it down through six generations of one family. Today the fifth-generation Acharya leads the Kalari, and the sixth generation is learning beside her.</p>
           <p>What began as a family practice beside the Kshetram near Chumanna Mannu has become a place where devotees from across Kerala and beyond come for guidance, prayer and peace of mind.</p>
           <p class="quote">“Every generation receives the tradition as it was given, and keeps it as it was kept.”</p>
         </div>
@@ -224,7 +228,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
       </div>
       <div class="center" style="margin-top:80px">
         <span class="eyebrow">The lineage</span>
-        <h2>Six generations of Acharyas</h2>
+        <h2>Six generations, one tradition</h2>
         {divider()}
       </div>
       <div class="lineage">
@@ -238,14 +242,15 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
     <div class="container acharya">
       <div class="acharya-frame reveal">
         <!-- Replace /assets/img/acharya-main.jpg with a portrait of the present Acharya (1000×1300, portrait) -->
-        <div class="arch"><img src="/assets/img/acharya-main.jpg" alt="The present Acharya of {C['name']}" loading="lazy"></div>
+        <div class="arch"><img src="/assets/img/acharya-main.jpg" alt="The present Acharya of {C['name']}, fifth generation" loading="lazy"></div>
       </div>
       <div class="reveal">
         <span class="eyebrow" style="color:var(--gold-soft)">The present Acharya</span>
         <h2><!-- EDIT: name -->Acharya of Vylongara Kalari</h2>
-        <p class="role">Sixth generation · Mashinottam &amp; Jyothisham</p>
+        <p class="role">Fifth generation · Mashinottam &amp; Jyothisham</p>
         <!-- EDIT: replace with the Acharya's own introduction -->
-        <p class="lead">The present Acharya carries forward the family's practice as the sixth generation, guiding devotees through Mashinottam and Jyothisham every day at the Kalari.</p>
+        <p class="lead">The present Acharya carries forward the family's practice as the fifth generation, guiding devotees through Mashinottam and Jyothisham every day at the Kalari.</p>
+        <p>The sixth generation of the family is now learning the tradition under her guidance, so that it continues as it has for more than three hundred years.</p>
         <p>Devotees are received with patience and care. Each consultation is unhurried: some take a few minutes, others much longer, as each person's situation requires.</p>
         <a class="btn btn-gold" href="{WA}" target="_blank" rel="noopener" style="margin-top:12px">{I['wa']} Book a consultation</a>
       </div>

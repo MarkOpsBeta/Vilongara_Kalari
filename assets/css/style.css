@@ -118,6 +118,10 @@ section { padding: 100px 0; }
 .gen .num { display: inline-block; margin-top: 14px; font-family: var(--display); font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
 .gen h4 { font-family: var(--serif); font-size: 1.15rem; margin: 4px 0 0; color: var(--maroon-deep); }
 .gen.current .arch { border-color: var(--gold); border-width: 4px; }
+.gen.next .arch { border-style: dashed; box-shadow: none; background: radial-gradient(circle at 50% 45%, #7a2a1c 0%, var(--maroon-deep) 70%); }
+.gen.next .emblem { aspect-ratio: 3/4; display: grid; place-items: center; color: var(--gold-soft); }
+.gen.next .emblem svg { width: 42%; height: auto; filter: drop-shadow(0 0 18px rgba(232,190,110,.45)); }
+.gen.next h4 { font-style: italic; color: var(--ink); opacity: .75; }
 
 /* ---------- acharya feature ---------- */
 .acharya { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }

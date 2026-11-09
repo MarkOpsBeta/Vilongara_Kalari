@@ -1,6 +1,6 @@
 # Vylongara Kalari — website
 
-Static website for **vailongarakalari.in**: home page with large Kshetram photos, the six-generation lineage and the present Acharya, plus the policy pages that Meta, Razorpay and Google ask for.
+Static website for **vailongarakalari.in**: home page with large Kshetram photos, the six-generation lineage (five Acharya portraits plus a lamp for the sixth generation, who is still learning) and the present Acharya, plus the policy pages that Meta, Razorpay and Google ask for.
 
 - Hosting: **GitHub Pages** (free, HTTPS)
 - Domain: **GoDaddy**
@@ -46,8 +46,9 @@ Replace these files **keeping the same names** (JPG, under ~400 KB each; compres
 | `assets/img/kshetram/kshetram-4.jpg` | Kalari | 1600×1100 |
 | `assets/img/kshetram/kshetram-5.jpg` | Amavasi Kalasha Pooja | 1600×1100 |
 | `assets/img/kshetram/kshetram-6.jpg` | Kshetram grounds | 1600×1600 |
-| `assets/img/acharya-main.jpg` | Present Acharya portrait | Portrait 1000×1300 |
-| `assets/img/lineage/generation-1.jpg` … `generation-6.jpg` | Portraits of the six generations (old photos or paintings are fine; generation-6 = present Acharya) | Portrait 600×760 |
+| `assets/img/acharya-main.jpg` | Present Acharya (5th generation), large portrait | Portrait 1000×1300 |
+| `assets/img/lineage/generation-1.jpg` … `generation-4.jpg` | Portraits of the four earlier Acharyas, 1st to 4th generation (old photos or paintings are fine) | Portrait 600×760 |
+| `assets/img/lineage/generation-5.jpg` | Present Acharya (5th generation); can be a crop of the same photo as `acharya-main.jpg` | Portrait 600×760 |
 | `assets/img/og-image.jpg` | Picture shown when the link is shared on WhatsApp/Facebook | 1200×630 |
 
 Captions under the gallery photos are in `index.html` (search `figcaption`).
