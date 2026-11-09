@@ -296,3 +296,94 @@ section { padding: 100px 0; }
 .social-lg a { width: 48px; height: 48px; }
 .social-dark a { border-color: var(--line); color: var(--maroon); }
 .social-dark a:hover { background: var(--maroon); color: #fff; }
+
+/* ---------- Kshetram dropdown ---------- */
+.has-sub { position: relative; }
+.sub-toggle { background: none; border: 0; font: inherit; font-weight: 500; font-size: .95rem; color: var(--ink); cursor: pointer; padding: 0; display: inline-flex; gap: 6px; align-items: center; }
+.sub-toggle:hover { color: var(--maroon-2); }
+.submenu { position: absolute; top: calc(100% + 18px); left: -18px; min-width: 310px; list-style: none; margin: 0; padding: 10px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); display: none; }
+.submenu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+.has-sub:hover .submenu, .has-sub:focus-within .submenu, .has-sub.open .submenu { display: block; }
+.submenu a { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 10px 12px; border-radius: 8px; white-space: nowrap; }
+.submenu a:hover { background: var(--sand); }
+.submenu .ml { color: var(--gold); font-size: .85rem; font-weight: 600; }
+.btn-outline { border-color: var(--maroon); color: var(--maroon); }
+.btn-outline:hover { background: var(--maroon); color: #fff; }
+
+/* ---------- link cards (home) ---------- */
+.link-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.link-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 24px; text-decoration: none; color: var(--ink); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.link-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--gold-soft); }
+.link-card svg { width: 40px; height: 40px; color: var(--gold); margin-bottom: 10px; }
+.link-card strong { font-family: var(--serif); font-size: 1.5rem; color: var(--maroon-deep); }
+.link-card .ml { color: var(--gold); font-weight: 700; }
+.link-card em { font-style: normal; color: var(--muted); font-size: .92rem; margin-top: 6px; }
+
+/* ---------- kshetram pages ---------- */
+.page-hero-ml { font-family: var(--ml); font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--gold-soft); margin-top: -4px; }
+.page-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: -26px auto 0; position: relative; z-index: 2; }
+.page-tabs a { background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; text-decoration: none; color: var(--ink); font-weight: 600; font-size: .92rem; display: inline-flex; gap: 8px; align-items: baseline; box-shadow: 0 8px 20px -14px rgba(62, 11, 11, .5); }
+.page-tabs a .ml { color: var(--gold); font-size: .82rem; }
+.page-tabs a[aria-current="page"] { background: var(--maroon); color: #fff; border-color: var(--maroon); }
+.page-tabs a[aria-current="page"] .ml { color: var(--gold-soft); }
+.kshetram-page { padding-top: 60px; }
+.intro .intro-ml { font-family: var(--ml); color: var(--maroon); font-weight: 600; font-size: 1.1rem; margin: 4px 0 0; }
+.note { color: var(--muted); font-size: .95rem; margin-top: 30px; }
+.note .ml, .page-cta .ml { display: block; margin-top: 4px; }
+
+.deity-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 20px; }
+.deity { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 18px 18px var(--radius) var(--radius); padding: 30px 18px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.deity svg { width: 40px; height: 40px; color: var(--gold); margin-bottom: 8px; }
+.deity .ml { font-size: 1.35rem; font-weight: 700; color: var(--maroon-deep); line-height: 1.5; }
+.deity strong { font-family: var(--serif); font-size: 1.2rem; color: var(--muted); font-weight: 600; }
+
+.schedule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
+.schedule-col { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.schedule-col h3 .ml, .vz-group h3 .ml { font-size: 1rem; color: var(--gold); }
+.schedule { list-style: none; margin: 18px 0 0; padding: 0; position: relative; }
+.schedule::before { content: ''; position: absolute; left: 74px; top: 8px; bottom: 8px; width: 2px; background: var(--gold-pale); }
+.schedule li { display: grid; grid-template-columns: 74px 1fr; gap: 22px; padding: 12px 0; position: relative; }
+.schedule li::after { content: ''; position: absolute; left: 69px; top: 20px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--white); }
+.schedule time { font-weight: 700; color: var(--maroon); font-size: .95rem; padding-top: 2px; }
+.schedule strong { display: block; font-family: var(--serif); font-size: 1.25rem; color: var(--maroon-deep); }
+.schedule .ml, .vishesha .ml, .vz-table .ml { display: block; color: var(--muted); font-size: .95rem; }
+
+.vishesha-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
+.vishesha { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; gap: 14px; align-items: flex-start; }
+.vishesha svg { width: 26px; height: 26px; color: var(--gold); flex: none; margin-top: 2px; }
+.vishesha strong { font-family: var(--serif); font-size: 1.3rem; color: var(--maroon-deep); display: block; }
+.vishesha em { display: block; font-style: normal; font-size: .88rem; color: var(--gold); margin-top: 4px; }
+.info-box { margin-top: 30px; background: var(--sand); border-left: 4px solid var(--gold); border-radius: 10px; padding: 20px 24px; color: var(--ink); }
+
+.vz-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 20px; }
+.vz-group { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 28px; }
+.vz-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.vz-table td { padding: 12px 0; border-bottom: 1px dashed var(--line); vertical-align: top; }
+.vz-table tr:last-child td { border-bottom: 0; }
+.vz-table strong { font-weight: 600; }
+.vz-table .rate { text-align: right; font-family: var(--serif); font-size: 1.35rem; font-weight: 700; color: var(--maroon); white-space: nowrap; padding-left: 16px; }
+
+.page-cta { margin-top: 50px; background: radial-gradient(circle at 20% 0%, var(--maroon-2), var(--maroon-deep) 70%); color: var(--gold-pale); border-radius: var(--radius); padding: 30px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+.page-cta p { margin: 0; }
+
+@media (max-width: 1024px) {
+  .link-cards, .deity-grid { grid-template-columns: repeat(2, 1fr); }
+  .vishesha-grid { grid-template-columns: repeat(2, 1fr); }
+  .schedule-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 880px) {
+  .has-sub .sub-toggle { display: none; }
+  .submenu { position: static; display: block; box-shadow: none; border: 0; padding: 0; min-width: 0; background: none; }
+  .submenu::before { display: none; }
+  .submenu a { padding: 14px 4px 14px 16px; border-radius: 0; border-bottom: 1px solid var(--line); }
+  .vz-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .link-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .link-card { padding: 22px 12px; }
+  .link-card strong { font-size: 1.2rem; }
+  .vishesha-grid { grid-template-columns: 1fr; }
+  .deity-grid { gap: 12px; }
+  .deity { padding: 22px 10px; }
+  .deity .ml { font-size: 1.1rem; }
+}

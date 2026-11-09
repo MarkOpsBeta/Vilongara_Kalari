@@ -76,9 +76,17 @@ def header(home=True):
     <ul class="menu" id="menu">
       <li><a href="{p}#heritage">Heritage</a></li>
       <li><a href="{p}#acharya">Acharya</a></li>
-      <li><a href="{p}#services">Services</a></li>
-      <li><a href="{p}#poojas">Poojas</a></li>
-      <li><a href="{p}#kshetram">Kshetram</a></li>
+      <li><a href="{p}#services">Consultations</a></li>
+      <li class="has-sub">
+        <button class="sub-toggle" type="button" aria-expanded="false">Kshetram <span aria-hidden="true">▾</span></button>
+        <ul class="submenu">
+          <li><a href="/prathishtas.html">Prathishtas <span class="ml">പ്രതിഷ്ഠകൾ</span></a></li>
+          <li><a href="/nithya-pooja.html">Nithya Pooja <span class="ml">നിത്യപൂജ</span></a></li>
+          <li><a href="/vishesha-poojas.html">Vishesha Poojas <span class="ml">വിശേഷ പൂജകൾ</span></a></li>
+          <li><a href="/vazhipadu.html">Vazhipadu <span class="ml">വഴിപാടുകൾ</span></a></li>
+          <li><a href="{p}#kshetram">Photos</a></li>
+        </ul>
+      </li>
       <li><a href="{p}#visit">Visit</a></li>
       <li><a class="btn btn-maroon" href="{WA}" target="_blank" rel="noopener">{I['wa']} Book on WhatsApp</a></li>
     </ul>
@@ -164,6 +172,7 @@ gallery = "\n".join(
 
 faqs = [
     ("What is Mashinottam?", "Mashinottam is a traditional Kerala practice of seeking guidance through observation of mashi (sacred ink). At Vylongara Kalari it has been practised by the same family for six generations."),
+    ("What are the temple timings?", "The nada opens 5:00 – 9:30 AM and 5:00 – 8:30 PM. Deeparadhana is at 6:45 PM. See the Nithya Pooja page for the full daily schedule."),
     ("Do I need to book before visiting?", "Yes. Please book on WhatsApp at least 2 days ahead. On your booked date you may come any time between 10 AM and 4 PM; devotees are seen in order of arrival."),
     ("How much does a consultation cost?", "There is no fixed fee for a direct consultation. A ₹101 booking token confirms your visit, and you may offer any dakshina you wish on the day. Online phone consultations are ₹1,001."),
     ("Can I consult from abroad or another city?", "Yes. Choose an online consultation on WhatsApp. The Acharya calls you on a normal phone call between 7 PM and 10 PM in the time slot you book."),
@@ -294,16 +303,36 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           </div>
         </article>
         <div class="pooja-list reveal">
-          <h3>Vishesha Kshetra Poojas</h3>
-          <p style="color:var(--muted)">Performed on pooja days from 10 AM to 2 PM, usually as advised by the Acharya during consultation.</p>
+          <h3>Vishesha Poojas <span class="ml" style="font-size:1rem;color:var(--gold)">വിശേഷ പൂജകൾ</span></h3>
+          <p style="color:var(--muted)">Special poojas of the Kshetram through the year, and poojas advised by the Acharya during consultation.</p>
           <ul>
-            <li>{I['lotus']}<div><strong>Navakam</strong><span>Kshetra pooja</span></div></li>
-            <li>{I['lotus']}<div><strong>Panchagavyam</strong><span>Kshetra pooja</span></div></li>
-            <li>{I['lotus']}<div><strong>Ganapathy Homam</strong><span>Kshetra pooja</span></div></li>
+            <li>{I['lotus']}<div><strong>Navakam · Panchagavyam</strong><span class="ml">നവകം · പഞ്ചഗവ്യം</span></div></li>
+            <li>{I['lotus']}<div><strong>Mahaganapathy Homam</strong><span class="ml">മഹാഗണപതി ഹോമം</span></div></li>
+            <li>{I['lotus']}<div><strong>Udayasthamana Pooja · Laksharchana</strong><span class="ml">ഉദയാസ്തമന പൂജ · ലക്ഷാർച്ചന</span></div></li>
           </ul>
-          <div class="days"><span>Tuesday</span><span>Friday</span><span>Sunday</span><span>Amavasi</span></div>
-          <p style="margin:18px 0 0;font-size:.92rem;color:var(--muted)">Rates and available dates are shared on WhatsApp.</p>
+          <div class="hero-actions" style="margin-top:20px">
+            <a class="btn btn-maroon" href="/vishesha-poojas.html">All Vishesha Poojas</a>
+            <a class="btn btn-outline" href="/vazhipadu.html">Vazhipadu &amp; rates</a>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AT THE KSHETRAM: links to the dedicated pages -->
+  <section class="pattern">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">At the Kshetram</span>
+        <h2>Deities, daily poojas and offerings</h2>
+        <p class="ml" style="color:var(--gold);font-weight:700;margin-top:-6px">പ്രതിഷ്ഠകൾ · നിത്യപൂജ · വിശേഷ പൂജകൾ · വഴിപാടുകൾ</p>
+        {divider()}
+      </div>
+      <div class="link-cards">
+        <a class="link-card reveal" href="/prathishtas.html">{I['lamp']}<strong>Prathishtas</strong><span class="ml">പ്രതിഷ്ഠകൾ</span><em>The deities of the Kshetram</em></a>
+        <a class="link-card reveal" href="/nithya-pooja.html">{I['clock']}<strong>Nithya Pooja</strong><span class="ml">നിത്യപൂജ</span><em>Daily pooja timings</em></a>
+        <a class="link-card reveal" href="/vishesha-poojas.html">{I['lotus']}<strong>Vishesha Poojas</strong><span class="ml">വിശേഷ പൂജകൾ</span><em>Special poojas through the year</em></a>
+        <a class="link-card reveal" href="/vazhipadu.html">{I['star']}<strong>Vazhipadu</strong><span class="ml">വഴിപാടുകൾ</span><em>Offerings and rates</em></a>
       </div>
     </div>
   </section>
@@ -353,12 +382,14 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           <h3>Timings</h3>
           <table>
             <tr><td>Temple nada (morning)</td><td>5:00 – 9:30 AM</td></tr>
-            <tr><td>Temple nada (evening)</td><td>5:30 – 8:00 PM</td></tr>
+            <tr><td>Temple nada (evening)</td><td>5:00 – 8:30 PM</td></tr>
+            <tr><td>Deeparadhana</td><td>6:45 PM</td></tr>
             <tr><td>Consultations at the Kalari</td><td>10 AM – 4 PM, every day</td></tr>
             <tr><td>Online consultations</td><td>7 – 10 PM</td></tr>
-            <tr><td>Poojas</td><td>Tue, Fri, Sun · 10 AM – 2 PM</td></tr>
+            <tr><td>Poojas advised at consultation</td><td>Tue, Fri, Sun · 10 AM – 2 PM</td></tr>
             <tr><td>Amavasi Kalasha Pooja</td><td>11 AM – 1:30 PM</td></tr>
           </table>
+          <p><a href="/nithya-pooja.html">Full daily pooja schedule →</a></p>
           <ul class="contact-list" style="color:var(--ink)">
             <li>{I['pin']}<span>{C['address']}</span></li>
             {phone_items()}
@@ -572,7 +603,7 @@ contact = f"""    {who}
     <p><a class="btn btn-maroon" href="{WA}" target="_blank" rel="noopener">{I['wa']} Message us on WhatsApp</a></p>
     <h2>Visit</h2>
     <p>{C['address']}</p>
-    <p>Consultations: every day, 10 AM – 4 PM (please book at least 2 days ahead).<br>Temple nada: 5:00 – 9:30 AM and 5:30 – 8:00 PM.</p>
+    <p>Consultations: every day, 10 AM – 4 PM (please book at least 2 days ahead).<br>Temple nada: 5:00 – 9:30 AM and 5:00 – 8:30 PM.</p>
     <h2>Phone and email</h2>
     <p>{"<br>".join(f'Phone: <a href="{TEL(n)}">{n}</a>' for n in C["phones"])}<br>WhatsApp: <a href="{WA}" target="_blank" rel="noopener">{WA_SHOW}</a><br>Email: <a href="mailto:{C['email']}">{C['email']}</a></p>
     <p>Office: {C['office']}</p>
@@ -585,6 +616,90 @@ notfound = head(f"Page not found | {C['name']}", "Page not found") + header(home
 <p style="margin-top:24px"><a class="btn btn-gold" href="/">Go to home page</a></p></div></div></main>
 """ + footer()
 
+# ======================= KSHETRAM PAGES (English + Malayalam) =======================
+PRATHISHTAS = [
+    ("Sree Vishnumaya", "ശ്രീ വിഷ്ണുമായ"), ("Bhagavathi", "ഭഗവതി"), ("Guru", "ഗുരു"), ("Ganapathi", "ഗണപതി"),
+    ("Kalari Thara Nagangal", "കളരിത്തറ നാഗങ്ങൾ"), ("Rakshassu", "രക്ഷസ്സ്"), ("Bhuvaneshwari", "ഭുവനേശ്വരി"), ("Chathanmar", "ചാത്തന്മാർ"),
+]
+NITHYA = [
+    ("Morning", "രാവിലെ", [("5:00 AM", "Nada opening", "നട തുറക്കൽ"), ("5:30 AM", "Malar Nivedyam", "മലർ നിവേദ്യം"),
+                         ("9:00 AM", "Adachu Pooja", "അടച്ചുപൂജ"), ("9:30 AM", "Thurannu Aradhana", "തുറന്ന് ആരാധന")]),
+    ("Evening", "വൈകുന്നേരം", [("5:00 PM", "Nada opening", "നട തുറക്കൽ"), ("6:45 PM", "Deeparadhana", "ദീപാരാധന"),
+                              ("7:00 PM", "Athazha Pooja", "അത്താഴപൂജ")]),
+    ("Night", "രാത്രി", [("8:00 PM", "Guruthi", "ഗുരുതി"), ("8:30 PM", "Nada closing", "നട അടയ്ക്കൽ")]),
+]
+VISHESHA = [
+    ("Amavasi Pooja", "അമാവാസി പൂജ", "Every Amavasi; includes the Amavasi Kalasha Pooja"),
+    ("Navakam", "നവകം", ""), ("Panchagavyam", "പഞ്ചഗവ്യം", ""),
+    ("Mahaganapathy Homam", "മഹാഗണപതി ഹോമം", ""),
+    ("Udayasthamana Pooja", "ഉദയാസ്തമന പൂജ", "Poojas from sunrise to sunset"),
+    ("Laksharchana", "ലക്ഷാർച്ചന", ""), ("Dravyakalasham", "ദ്രവ്യകലശം", ""), ("Illam Nira", "ഇല്ലംനിറ", ""),
+    ("Karkkidaka Masa Poojakal", "കർക്കിടകമാസ പൂജകൾ", "Poojas during the month of Karkkidakam"),
+    ("Ayilya Pooja for the Nagas", "നാഗങ്ങൾക്ക് കന്നിമാസത്തിലെ ആയില്യ പൂജ", "On Ayilyam in the month of Kanni"),
+    ("Sarpa Bali", "സർപ്പബലി", ""),
+    ("Kalam Paattu for the Swamikal", "സ്വാമികൾക്ക് കളംപാട്ട്", ""),
+]
+VAZHIPADU = [
+    ("Archana & Pushpanjali", "അർച്ചന / പുഷ്പാഞ്ജലി", [("Pushpanjali", "പുഷ്പാഞ്ജലി", 10), ("Shathru Samhara Pushpanjali", "ശത്രുസംഹാര പുഷ്പാഞ്ജലി", 101)]),
+    ("Nivedyam", "നിവേദ്യം", [("Neyy Payasam", "നെയ്പ്പായസം", 50), ("Pal Payasam", "പാൽപ്പായസം", 70), ("Appam", "അപ്പം", 100), ("Dhanya Para", "ധാന്യപ്പറ", 101)]),
+    ("Samskaram", "സംസ്കാരം", [("Choroonu (first rice feeding)", "ചോറൂണ്", 101)]),
+    ("Guruthi & Karmam", "ഗുരുതി / കർമ്മം", [("Shathru Samhara Guruthi", "ശത്രുസംഹാര ഗുരുതി", 501), ("Vellattu Karmam", "വെള്ളാട്ട് കർമ്മം", 1001)]),
+    ("Kalasham & Vilakku", "കലശം / വിളക്ക്", [("Kalasham", "കലശം", 1001), ("Chuttu Vilakku", "ചുറ്റുവിളക്ക്", 3000)]),
+    ("Day poojas & Annadanam", "ദിവസ പൂജ / അന്നദാനം", [("One full day pooja", "ഒരു ദിവസത്തെ മുഴുവൻ പൂജ", 6000),
+        ("Special pooja for a day, with nivedyam of one para of rice", "ഒരു പറ അരിയുടെ നിവേദ്യത്തോടു കൂടിയ ഒരു ദിവസത്തെ വിശേഷാൽ പൂജ", 10000),
+        ("Amavasi Annadanam", "അമാവാസി അന്നദാനം", 10000)]),
+]
+inr = lambda n: "₹" + format(n, ",").replace(",", ",")
+
+def kshetram_nav(current):
+    items = [("prathishtas.html", "Prathishtas", "പ്രതിഷ്ഠകൾ"), ("nithya-pooja.html", "Nithya Pooja", "നിത്യപൂജ"),
+             ("vishesha-poojas.html", "Vishesha Poojas", "വിശേഷ പൂജകൾ"), ("vazhipadu.html", "Vazhipadu", "വഴിപാടുകൾ")]
+    return '<nav class="page-tabs" aria-label="Kshetram pages">' + "".join(
+        f'<a href="/{f}"{" aria-current=\"page\"" if f == current else ""}>{e}<span class="ml">{m}</span></a>' for f, e, m in items) + "</nav>"
+
+def kshetram_page(fname, title, title_ml, intro, intro_ml, body, desc):
+    html = head(f"{title} | {C['name']}", desc, fname) + header(home=False) + f"""
+<main id="main">
+  <div class="page-hero"><div class="container">
+    <h1>{title}</h1><p class="ml page-hero-ml">{title_ml}</p>
+  </div></div>
+  <div class="container">{kshetram_nav(fname)}</div>
+  <section class="kshetram-page">
+    <div class="container">
+      <div class="intro center"><p class="lead">{intro}</p><p class="ml intro-ml">{intro_ml}</p>{divider()}</div>
+{body}
+      <div class="page-cta">
+        <p>For bookings and enquiries, message us on WhatsApp. <span class="ml">ബുക്കിംഗിനും വിവരങ്ങൾക്കും വാട്സ്ആപ്പിൽ ബന്ധപ്പെടുക.</span></p>
+        <a class="btn btn-maroon" href="{WA}" target="_blank" rel="noopener">{I['wa']} WhatsApp {WA_SHOW}</a>
+      </div>
+    </div>
+  </section>
+</main>
+""" + footer()
+    open(os.path.join(OUT, fname), "w").write(html)
+
+deity_cards = "\n".join(f'        <div class="deity reveal">{I["lamp"]}<span class="ml">{m}</span><strong>{e}</strong></div>' for e, m in PRATHISHTAS)
+prathishtas_body = f'      <div class="deity-grid">\n{deity_cards}\n      </div>'
+
+sched = []
+for part, part_ml, rows in NITHYA:
+    lis = "".join(f'<li><time>{t}</time><div><strong>{e}</strong><span class="ml">{m}</span></div></li>' for t, e, m in rows)
+    sched.append(f'        <div class="schedule-col reveal"><h3>{part} <span class="ml">{part_ml}</span></h3><ol class="schedule">{lis}</ol></div>')
+nithya_body = '      <div class="schedule-grid">\n' + "\n".join(sched) + '\n      </div>\n      <p class="center note">Timings may change on festival and special days. <span class="ml">ഉത്സവ / വിശേഷ ദിവസങ്ങളിൽ സമയത്തിൽ മാറ്റം ഉണ്ടാകാം.</span></p>'
+
+vcards = "\n".join(f'        <div class="vishesha reveal">{I["lotus"]}<div><strong>{e}</strong><span class="ml">{m}</span>{f"<em>{n}</em>" if n else ""}</div></div>' for e, m, n in VISHESHA)
+vishesha_body = f"""      <div class="vishesha-grid">
+{vcards}
+      </div>
+      <div class="info-box"><strong>Poojas advised at consultation</strong> <span class="ml">(പരിഹാര പൂജകൾ)</span><br>
+        Poojas advised by the Acharya during a Mashinottam or Jyothisham consultation are done on Tuesday, Friday and Sunday, 10 AM – 2 PM. Details and rates are given at the consultation and on WhatsApp.</div>"""
+
+vz = []
+for grp, grp_ml, rows in VAZHIPADU:
+    trs = "".join(f'<tr><td><strong>{e}</strong><span class="ml">{m}</span></td><td class="rate">{inr(r)}</td></tr>' for e, m, r in rows)
+    vz.append(f'        <div class="vz-group reveal"><h3>{grp} <span class="ml">{grp_ml}</span></h3><table class="vz-table"><tbody>{trs}</tbody></table></div>')
+vazhipadu_body = '      <div class="vz-grid">\n' + "\n".join(vz) + '\n      </div>\n      <p class="center note">Vazhipadu can be offered at the Kshetram counter. Rates are in Indian Rupees. <span class="ml">വഴിപാടുകൾ ക്ഷേത്ര കൗണ്ടറിൽ നടത്താം.</span></p>'
+
 os.makedirs(OUT, exist_ok=True)
 open(os.path.join(OUT, "index.html"), "w").write(home)
 open(os.path.join(OUT, "404.html"), "w").write(notfound)
@@ -593,10 +708,22 @@ legal_page("terms.html", "Terms &amp; Conditions", "Terms for consultations, poo
 legal_page("refund-policy.html", "Cancellation &amp; Refund Policy", "Changes, cancellations and refunds", refund, f"Cancellation and Refund Policy of {C['name']}.")
 legal_page("service-delivery-policy.html", "Service Delivery Policy", "How and when our services are delivered", delivery, f"Service Delivery Policy of {C['name']}.")
 legal_page("contact.html", "Contact Us", "We are here to help", contact, f"Contact {C['name']}, near Chumanna Mannu, Thrissur.")
+kshetram_page("prathishtas.html", "Prathishtas", "പ്രതിഷ്ഠകൾ",
+    f"The deities installed and worshipped at the Kshetram of {C['name']}.", "വൈലോങ്ങര കളരി ക്ഷേത്രത്തിലെ പ്രതിഷ്ഠകൾ.",
+    prathishtas_body, f"Prathishtas (deities) of the Kshetram at {C['name']}, Thrissur.")
+kshetram_page("nithya-pooja.html", "Nithya Pooja", "നിത്യപൂജ",
+    "The daily pooja schedule of the Kshetram, every day of the year.", "ക്ഷേത്രത്തിലെ ദിവസേനയുള്ള പൂജാ സമയക്രമം.",
+    nithya_body, f"Daily pooja timings at {C['name']}: nada opening, Deeparadhana, Athazha Pooja and Guruthi.")
+kshetram_page("vishesha-poojas.html", "Vishesha Poojas", "വിശേഷ പൂജകൾ",
+    "Special poojas performed at the Kshetram through the year.", "ക്ഷേത്രത്തിൽ വർഷം മുഴുവൻ നടക്കുന്ന വിശേഷ പൂജകൾ.",
+    vishesha_body, f"Vishesha poojas at {C['name']}: Amavasi Pooja, Navakam, Mahaganapathy Homam, Laksharchana and more.")
+kshetram_page("vazhipadu.html", "Vazhipadu", "വഴിപാടുകൾ",
+    "Offerings that devotees can make at the Kshetram, with rates.", "ഭക്തർക്ക് നടത്താവുന്ന വഴിപാടുകളും നിരക്കുകളും.",
+    vazhipadu_body, f"Vazhipadu (offerings) and rates at {C['name']}: Pushpanjali, Payasam, Guruthi, Kalasham, Chuttu Vilakku and more.")
 
 # robots + sitemap + CNAME
 open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: https://{C['domain']}/sitemap.xml\n")
-pages = ["", "contact.html", "privacy-policy.html", "terms.html", "refund-policy.html", "service-delivery-policy.html"]
+pages = ["", "prathishtas.html", "nithya-pooja.html", "vishesha-poojas.html", "vazhipadu.html", "contact.html", "privacy-policy.html", "terms.html", "refund-policy.html", "service-delivery-policy.html"]
 open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     "".join(f"  <url><loc>https://{C['domain']}/{p}</loc></url>\n" for p in pages) + "</urlset>\n")
 open(os.path.join(OUT, "CNAME"), "w").write(C["domain"] + "\n")

@@ -16,6 +16,19 @@
     }));
   }
 
+  // Kshetram dropdown (click/tap; hover works on desktop through CSS)
+  document.querySelectorAll('.has-sub').forEach(li => {
+    const btn = li.querySelector('.sub-toggle');
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', () => document.querySelectorAll('.has-sub.open').forEach(li => {
+    li.classList.remove('open'); li.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false');
+  }));
+
   // Reveal sections as they scroll into view
   const items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
