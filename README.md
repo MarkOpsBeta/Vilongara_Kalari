@@ -1,6 +1,6 @@
 # Vylongara Kalari — website
 
-Static website for **vailongarakalari.in**: home page with large Kshetram photos, the six-generation lineage (five Acharya portraits plus a lamp for the sixth generation, who is still learning) and the present Acharya, plus the policy pages that Meta, Razorpay and Google ask for.
+Static website for **vailongarakalari.in**: home page with large Kshetram photos, the lineage of Acharyas (generations 1–5) and the present Acharya, plus the policy pages that Meta, Razorpay and Google ask for.
 
 - Hosting: **GitHub Pages** (free, HTTPS)
 - Domain: **GoDaddy**
