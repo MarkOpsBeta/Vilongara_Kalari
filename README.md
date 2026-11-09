@@ -41,10 +41,11 @@ Replace these files **keeping the same names** (JPG, under ~400 KB each; compres
 | --- | --- | --- |
 | `assets/img/kshetram/hero.jpg` | Main Kshetram photo (top of page) | Landscape, 2000×1200 or larger |
 | `assets/img/kshetram/kshetram-1.jpg` | Kshetram front | Landscape 1600×1100 |
-| `assets/img/kshetram/kshetram-2.jpg` | Sreekovil / inside (also used in Heritage) | Landscape 1600×1100 |
+| `assets/img/heritage.jpg` | Heritage section, beside the history text | Landscape 1600×1200 |
+| `assets/img/kshetram/kshetram-2.jpg` | Gallery photo 2 | Landscape 1600×1100 |
 | `assets/img/kshetram/kshetram-3.jpg` | Evening deeparadhana | 1600×1600 |
 | `assets/img/kshetram/kshetram-4.jpg` | Kalari | 1600×1100 |
-| `assets/img/kshetram/kshetram-5.jpg` | Amavasi Kalasha Pooja | 1600×1100 |
+| `assets/img/kshetram/kshetram-5.jpg` | Vishesha poojas (gallery and the Amavasi service card) | 1600×1100 |
 | `assets/img/kshetram/kshetram-6.jpg` | Kshetram grounds | 1600×1600 |
 | `assets/img/acharya-main.jpg` | Present Acharya (5th generation), large portrait | Portrait 1000×1300 |
 | `assets/img/lineage/generation-1.jpg` … `generation-4.jpg` | Portraits of the four earlier Acharyas, 1st to 4th generation (old photos or paintings are fine) | Portrait 600×760 |

@@ -165,7 +165,7 @@ lineage = "\n".join(
       </div>""" for i, (g, en, ml) in enumerate(gens, start=1))
 
 gallery_items = [("g1", 1, "The Kshetram"), ("g2", 2, "Sreekovil"), ("g3", 3, "Evening deeparadhana"),
-                 ("g4", 4, "Kalari"), ("g5", 5, "Amavasi Kalasha Pooja"), ("g6", 6, "Kshetram grounds")]
+                 ("g4", 4, "Kalari"), ("g5", 5, "Vishesha Poojas"), ("g6", 6, "Kshetram grounds")]
 gallery = "\n".join(
     f'      <figure class="{c}" style="margin:0"><button type="button" data-full="/assets/img/kshetram/kshetram-{n}.jpg" aria-label="Open photo: {cap}"><img src="/assets/img/kshetram/kshetram-{n}.jpg" alt="{cap}, {C["name"]}" loading="lazy"><figcaption>{cap}</figcaption></button></figure>'
     for c, n, cap in gallery_items)
@@ -220,7 +220,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
           <p>What began as a family practice beside the Kshetram near Chumanna Mannu has become a place where devotees from across Kerala and beyond come for guidance, prayer and peace of mind.</p>
           <p class="quote">“Every generation receives the tradition as it was given, and keeps it as it was kept.”</p>
         </div>
-        <div class="wide-img reveal"><img src="/assets/img/kshetram/kshetram-2.jpg" alt="Inside the Kshetram at {C['name']}" loading="lazy"></div>
+        <div class="wide-img reveal"><img src="/assets/img/heritage.jpg" alt="Devotees in prayer at {C['name']}" loading="lazy"></div>
       </div>
       <div class="center" style="margin-top:80px">
         <span class="eyebrow">The lineage</span>
@@ -295,7 +295,7 @@ home = head(f"{C['name']} | Mashinottam & Jyothisham, Thrissur",
       </div>
       <div class="pooja-grid">
         <article class="pooja-feature reveal">
-          <img src="/assets/img/kshetram/kshetram-5.jpg" alt="Amavasi Kalasha Pooja at {C['name']}" loading="lazy">
+          <img src="/assets/img/kshetram/kshetram-5.jpg" alt="A vishesha pooja at {C['name']}" loading="lazy">
           <div class="inner">
             <span class="eyebrow" style="color:var(--gold-soft)">Every Amavasi</span>
             <h3>Amavasi Kalasha Pooja</h3>
